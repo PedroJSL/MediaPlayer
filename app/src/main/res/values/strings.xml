@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">MediaPlayer</string>
+    <string name="biblioteca">Biblioteca</string>
+    <string name="duration">Duración:</string>
+    <string name="ancho">Ancho:</string>
+    <string name="alto">Alto:</string>
+    <string name="play">Reproducir video</string>
+    <string name="pausa">Pausar video</string>
+    <string name="stop">Parar video</string>
+    <string name="back">Retroceder 2 segundos</string>
+    <string name="forward">Avanzar 2 segundos</string>
+    <string name="up">Subir volumen</string>
+    <string name="down">Bajar volumen</string>
+    <string name="agua">Agua</string>
+    <string name="reproducir_video_agua">Reproducir video agua.</string>
+    <string name="globo">Globo</string>
+    <string name="reproducir_video_globo">Reproducir video globo</string>
+    <string name="parque">Parque Natural</string>
+    <string name="reproducir_video_parque_natural">Reproducir video parque natural</string>
+    <string name="cargando">Cargando Video…</string>
 </resources>

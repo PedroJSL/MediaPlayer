@@ -1,18 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/colorBackground"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.pedro.mediaplayer.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <TableLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_margin="10dp">
 
-</android.support.constraint.ConstraintLayout>
+        <TableRow>
+            <TextView
+                android:text="@string/biblioteca"
+                style="@style/titleLabel" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_weight="2"
+                android:text="@string/agua"
+                style="@style/elementLabel"
+                android:layout_margin="0dp"/>
+
+            <ImageButton
+                android:contentDescription="@string/reproducir_video_agua"
+                android:id="@+id/bPlayAgua"
+                android:src="@mipmap/ic_play"
+                style="@style/buttonList" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_weight="2"
+                android:text="@string/globo"
+                style="@style/elementLabel"
+                android:layout_margin="0dp"/>
+
+            <ImageButton
+                android:contentDescription="@string/reproducir_video_globo"
+                android:id="@+id/bPlayGlobo"
+                android:src="@mipmap/ic_play"
+                style="@style/buttonList" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_weight="2"
+                android:text="@string/parque"
+                style="@style/elementLabel"
+                android:layout_margin="0dp"/>
+
+            <ImageButton
+                android:contentDescription="@string/reproducir_video_parque_natural"
+                android:id="@+id/bPlayParque"
+                android:src="@mipmap/ic_play"
+                style="@style/buttonList"/>
+        </TableRow>
+
+
+
+    </TableLayout>
+    <include layout="@layout/progressbar_overlay"/>
+    <RelativeLayout
+        android:layout_weight="2"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <include layout="@layout/progressbar_overlay"/>
+        <TextView
+            android:id="@+id/durationLabel"
+            android:text="@string/duration"
+            style="@style/elementLabel"/>
+
+        <TextView
+            android:id="@+id/duration"
+            android:layout_toEndOf="@+id/durationLabel"
+            style="@style/resultLabel"/>
+
+        <TextView
+            android:id="@+id/anchorLabel"
+            android:text="@string/ancho"
+            android:layout_below="@+id/durationLabel"
+            style="@style/elementLabel"/>
+
+        <TextView
+            android:id="@+id/anchor"
+            android:layout_toEndOf="@+id/anchorLabel"
+            android:layout_below="@+id/durationLabel"
+            style="@style/resultLabel"/>
+
+        <TextView
+            android:id="@+id/heightLabel"
+            android:text="@string/alto"
+            android:layout_below="@+id/anchorLabel"
+            style="@style/elementLabel" />
+
+        <TextView
+            android:id="@+id/height"
+            android:layout_toEndOf="@+id/heightLabel"
+            android:layout_below="@id/anchorLabel"
+            style="@style/resultLabel" />
+
+        <SurfaceView
+            android:id="@+id/surfaceView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/controlPanel"
+        android:gravity="center_horizontal"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:contentDescription="@string/play"
+            android:id="@+id/bPlay"
+            android:src="@mipmap/ic_play"
+            style="@style/buttonStyle" />
+
+        <ImageButton
+            android:contentDescription="@string/pausa"
+            android:id="@+id/bPause"
+            android:src="@mipmap/ic_pause"
+            style="@style/buttonStyle"/>
+
+        <ImageButton
+            android:contentDescription="@string/stop"
+            android:id="@+id/bStop"
+            android:src="@mipmap/ic_stop"
+            style="@style/buttonStyle"/>
+
+        <ImageButton
+            android:contentDescription="@string/back"
+            android:id="@+id/bBack"
+            android:src="@mipmap/ic_back"
+            style="@style/buttonStyle"/>
+
+        <ImageButton
+            android:contentDescription="@string/forward"
+            android:id="@+id/bForward"
+            android:src="@mipmap/ic_forward"
+            style="@style/buttonStyle"/>
+
+        <ImageButton
+            android:contentDescription="@string/up"
+            android:id="@+id/bUp"
+            android:src="@mipmap/ic_up"
+            style="@style/buttonStyle"/>
+
+        <ImageButton
+            android:contentDescription="@string/down"
+            android:id="@+id/bDown"
+            android:src="@mipmap/ic_down"
+            style="@style/buttonStyle"/>
+
+    </LinearLayout>
+
+</LinearLayout>

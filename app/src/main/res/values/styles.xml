@@ -8,4 +8,41 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="buttonStyle">
+        <item name="android:background">@color/colorBackground</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:layout_width">25dp</item>
+        <item name="android:layout_height">25dp</item>
+        <item name="android:padding">2dp</item>
+        <item name="android:scaleType">fitCenter</item>
+    </style>
+
+    <style name="resultLabel">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">5dp</item>
+    </style>
+
+    <style name="elementLabel">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">10dp</item>
+    </style>
+
+    <style name="titleLabel">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="buttonList">
+        <item name="android:layout_height">15dp</item>
+        <item name="android:layout_width">25dp</item>
+        <item name="android:padding">2dp</item>
+        <item name="android:background">@color/colorBackground</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:onClick">selectVideo</item>
+    </style>
+
 </resources>
