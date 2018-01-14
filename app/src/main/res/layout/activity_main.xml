@@ -106,6 +106,9 @@
 
         <SurfaceView
             android:id="@+id/surfaceView"
+            android:background="@color/white"
+            android:layout_below="@id/heightLabel"
+            android:layout_marginTop="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"/>

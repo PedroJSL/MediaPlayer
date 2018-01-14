@@ -2,6 +2,7 @@ package com.example.pedro.mediaplayer;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.SurfaceView;
 import android.view.View;
 import android.widget.TextView;
@@ -94,6 +96,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void playVideo() {
         if(mp!=null){
+            sv.setBackgroundColor(Color.TRANSPARENT);
+            //sv.getHolder().setFormat(PixelFormat.TRANSPARENT);
             mp.start();
         }
     }
@@ -103,6 +107,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             mp.stop();
             mp.release();
             mp = null;
+            controlPanel.setVisibility(View.GONE);
+            sv.setBackgroundColor(getResources().getColor(R.color.white));
+            tvAncho.setText("");
+            tvAlto.setText("");
+            tvDuracion.setText("");
         }
     }
 
@@ -136,6 +145,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tvAlto.setText(String.valueOf(alto));
         tvDuracion.setText(String.valueOf(duracion));
         sv.getHolder().setFixedSize(ancho, alto);
+        sv.setBackgroundColor(Color.TRANSPARENT);
+        this.mp = mp;
         controlPanel.setVisibility(View.VISIBLE);
         progressBar.setVisibility(View.GONE);
     }
@@ -161,7 +172,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 mp.prepareAsync();
                 progressBar.setVisibility(View.VISIBLE);
             } catch (IOException e) {
-
+                Log.d("Error al cargar: ",e.getMessage());
             }
         } else {
             stopVideo();
